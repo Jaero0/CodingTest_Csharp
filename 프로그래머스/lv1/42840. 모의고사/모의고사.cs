@@ -8,15 +8,13 @@ public class Solution
 {
     public int[] solution(int[] answers)
     {
-        List<int> answer = new List<int>();
+        List<int> goal = new List<int>();
 
         int[] student1 = { 1, 2, 3, 4, 5 };
         int[] student2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
         int[] student3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
 
         int[] score = new int[3];
-
-        int max = 0;
 
         for (int i = 0; i < answers.Length; i++)
         {
@@ -30,16 +28,16 @@ public class Solution
                 score[2] += 1;
         }
 
-        max = score.Max();
+        int max = score.Max();
 
         for (int i = 0; i < 3; i++)
         {
             if (max == score[i])
             {
-                answer.Add(i + 1);
+                goal.Add(i + 1);
             }
         }
 
-        return answer.ToArray();
+        return goal.ToArray();
     }
 }
