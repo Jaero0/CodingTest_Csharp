@@ -10,52 +10,15 @@ public class Solution
 {
     public int solution(int n)
     {
-        int answer = 0;
+        int answer = 1;
 
-        int defaultPizzaPieces = 6;
-
-        int minimum;
-
-        if (n >= defaultPizzaPieces)
+        while (true)
         {
-            minimum = n % defaultPizzaPieces;
-        }
-        else
-        {
-            minimum = defaultPizzaPieces % n;
+            if (6 * answer % n == 0)
+                break;
+            answer++;
         }
 
-        if (minimum != 0)
-        {
-            if (n >= defaultPizzaPieces)
-            {
-                while (defaultPizzaPieces % minimum != 0)
-                {
-                    minimum = defaultPizzaPieces % minimum;
-                }
-            }
-            else
-            {
-                while (n % minimum != 0)
-                {
-                    minimum = n % minimum;
-                }
-            }
-        }
-        else
-        {
-            if (n >= defaultPizzaPieces)
-            {
-                return answer = n / defaultPizzaPieces;
-            }
-            else
-            {
-                return answer = 1;
-            }
-        }
-
-        int needPizzaPieces = (defaultPizzaPieces * n) / minimum;
-
-        return answer = needPizzaPieces / defaultPizzaPieces;
+        return answer;
     }
 }
