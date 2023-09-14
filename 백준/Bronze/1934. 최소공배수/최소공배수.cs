@@ -8,6 +8,7 @@ public class Solution
 {
     public static void Main()
     {
+        StringBuilder sb = new StringBuilder();
         string count = Console.ReadLine();
 
         for (int i = 0; i < int.Parse(count); i++)
@@ -20,8 +21,10 @@ public class Solution
             int GCD = GetGCD(a, b);
             int LCM = GetLCM(a*b, GCD);
 
-            Console.WriteLine(LCM);
+            sb.Append(LCM+"\n");
         }
+
+        Console.WriteLine(sb);
     }
 
     static int GetGCD(int a, int b)
