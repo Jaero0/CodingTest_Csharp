@@ -12,31 +12,26 @@ public class Solution
     {
         int answer = 0;
 
-        int minimum = n % 6;
+        int pizza = 6;
 
-        if (minimum != 0)
+        int a = n;
+        int b = 6;
+
+        int gcd = GCD(a, b);
+        int lcm = a * b / gcd;
+
+        return lcm / b;
+    }
+
+    int GCD(int a, int b)
+    {
+        if (a % b == 0)
         {
-            while (6 % minimum != 0)
-            {
-                minimum = 6 % minimum;
-            }
+            return b;
         }
-
         else
         {
-            if (n > 6)
-            {
-                return answer = n / 6;
-            }
-            else
-            {
-                return answer = 1;
-            }
+            return GCD(b, a % b);
         }
-
-
-        int needPizzaPieces = (6 * n) / minimum;
-
-        return answer = needPizzaPieces / 6;
     }
 }
