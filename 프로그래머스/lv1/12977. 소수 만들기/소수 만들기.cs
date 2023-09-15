@@ -10,7 +10,6 @@ class Solution
     {
         int answer = 0;
         int count = nums.Length;
-        List<int> listNums = nums.ToList();
 
         for (int i = 0; i < count; i++)
         {
@@ -18,20 +17,9 @@ class Solution
             {
                 for (int k = j + 1; k < count; k++)
                 {
-                    int sum = listNums[i] + listNums[j] + listNums[k];
-                    int sqrtSum = (int)MathF.Sqrt(sum);
+                    int sum = nums[i] + nums[j] + nums[k];
 
-                    int divisorCount = 0;
-
-                    for (int z = 1; z <= sqrtSum; z++)
-                    {
-                        if (sum % z == 0)
-                        {
-                            divisorCount++;
-                        }
-                    }
-
-                    if(divisorCount == 1)
+                    if(CheckDivisorCount(sum) == 0)
                     {
                         answer++;
                     }
@@ -45,5 +33,22 @@ class Solution
         }
 
         return answer;
+    }
+
+    int CheckDivisorCount(int num)
+    {
+        int sqrtNum = (int)MathF.Sqrt(num);
+
+        int divisorCount = 0;
+
+        for (int i = 2; i <= sqrtNum; i++)
+        {
+            if (num % i == 0)
+            {
+                divisorCount++;
+            }
+        }
+
+        return divisorCount;
     }
 }
