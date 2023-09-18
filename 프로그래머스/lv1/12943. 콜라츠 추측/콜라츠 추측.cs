@@ -1,26 +1,47 @@
-public class Solution {
-       public int solution(int num) {
+public class Solution
+{
+    public int solution(int num)
+    {
         int answer = 0;
-        long a = num;
-        
-        while(a != 1)
+        bool isOne = false;
+
+        for (int i = 0; i < 500; i++)
         {
-            ++answer;
-            
-            if(a % 2 == 0)
+            if (num < 0)
             {
-                a = a/2;
+                break;
             }
-            else 
+            else if (num == 1)
             {
-                a= (a*3)+1;
+                isOne = true;
+                break;
             }
-            
-            if(answer >= 500)
+            else if (num % 2 == 0)
             {
-                return -1;
+                num = num / 2;
+                answer++;
+            }
+            else
+            {
+                num = num * 3 + 1;
+                answer++;
+            }
+
+            if (num == 1)
+            {
+                isOne = true;
+                break;
             }
         }
-        return answer;
+
+        if (isOne)
+        {
+            return answer;
+        }
+        else
+        {
+            return -1;
+        }
+        
     }
 }
