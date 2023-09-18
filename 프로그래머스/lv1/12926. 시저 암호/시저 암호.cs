@@ -10,18 +10,6 @@ public class Solution
     {
         string answer = "";
 
-        char[] smallAlphabet = new char[26];
-        for (int i = 0; i < 26; i++)
-        {
-            smallAlphabet[i] = (char)(i + 97);
-        }
-
-        char[] bigAlphabet = new char[26];
-        for (int i = 0; i < 26; i++)
-        {
-            bigAlphabet[i] = (char)(i + 65);
-        }
-
         char[] sChar = s.ToCharArray();
 
         foreach (char c in sChar)
