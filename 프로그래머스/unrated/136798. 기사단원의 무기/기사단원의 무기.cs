@@ -6,17 +6,15 @@ using System.Linq;
 
 public class Solution
 {
-
     public int solution(int number, int limit, int power)
     {
         int answer = 0;
         List<int> divisorList = new List<int>(); //약수개수 담을 리스트
-
-        int divisorCount = 0;
-
         divisorList.Add(1); //먼저 1 추가하기
+
         for (int i = 2; i <= number; i++)
         {
+            int divisorCount = 0;
             int sqrtI = (int)MathF.Sqrt(i);
 
             for (int j = 1; j <= sqrtI; j++)
@@ -33,26 +31,18 @@ public class Solution
             }
 
             divisorList.Add(divisorCount);
-            divisorCount = 0;
         }
-
-        List<int> result = new List<int>();
 
         foreach (int divisor in divisorList)
         {
             if (divisor <= limit)
             {
-                result.Add(divisor);
+                answer += divisor;
             }
             else
             {
-                result.Add(power);
+                answer += power;
             }
-        }
-
-        foreach (int i in result)
-        {
-            answer += i;
         }
 
         return answer;
