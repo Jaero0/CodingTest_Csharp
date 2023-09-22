@@ -9,6 +9,7 @@ public class Solution
     public string solution(string phone_number)
     {
         StringBuilder sb = new StringBuilder();
+        string answer = "";
 
         char[] numChar = phone_number.ToCharArray();
 
@@ -18,9 +19,9 @@ public class Solution
             {
                 numChar[i] = '*';
             }
-            sb.Append(numChar[i].ToString());
+            answer += numChar[i];
         }
 
-        return sb.ToString();
+        return answer;
     }
 }
