@@ -1,8 +1,4 @@
 using System;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 
 public class Solution
 {
@@ -12,15 +8,10 @@ public class Solution
         int devide = 0;
         string three = "";
 
-        while (true)
+        while (n != 0)
         {
-            devide = n / 3;
             three += (n % 3).ToString();
             n /= 3;
-            if (devide == 0)
-            {
-                break;
-            }
         }
 
         char[] chars = three.ToCharArray();
@@ -30,9 +21,7 @@ public class Solution
         {
             answer += (chars[i] - '0') * (int)Math.Pow(3, i);
         }
-
-
-
+        
         return answer;
     }
 }
