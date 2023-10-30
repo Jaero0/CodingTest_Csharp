@@ -11,8 +11,9 @@ public class Main {
         String input = br.readLine();
         StringTokenizer stn = new StringTokenizer(input);
 
+        int a = Integer.parseInt(stn.nextToken());
+        int b = Integer.parseInt(stn.nextToken());
 
-        System.out.println(Integer.parseInt(stn.nextToken()) *
-                Integer.parseInt(stn.nextToken()));
+        System.out.println( a*b);
     }
 }
