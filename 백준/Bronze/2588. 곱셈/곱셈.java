@@ -6,11 +6,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        int a = Integer.parseInt(br.readLine());
 
         String input = br.readLine();
-        int a = Integer.parseInt(input);
-
-        input = br.readLine();
+        
         char c;
 
         for (int i = input.length()-1; i >=0 ; i--) {
