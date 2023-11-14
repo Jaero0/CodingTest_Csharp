@@ -1,10 +1,17 @@
-import java.util.Arrays;
-
 class Solution {
     public int solution(int[] numbers) {
 
-        Arrays.sort(numbers);
-        
-        return numbers[numbers.length -1] * numbers[numbers.length -2];
+        int max = numbers[0];
+        int secondMax = 0;
+
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                secondMax = max;
+                max = numbers[i];
+            } else if (numbers[i] > secondMax) {
+                secondMax = numbers[i];
+            }
+        }
+        return max * secondMax;
     }
 }
