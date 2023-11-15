@@ -1,5 +1,5 @@
 class Solution {
-    public int solution(String[] babbling) {
+    public static int solution(String[] babbling) {
         int answer = 0;
 
         String[] aya = {"aya", "ye", "woo", "ma"};
@@ -16,13 +16,10 @@ class Solution {
             }
 
             babbling[i] = s;
-        }
-
-        for (int i = 0; i < babbling.length; i++) {
 
             if (babbling[i] != null) {
-                String s = babbling[i].trim();
-                if (s.equals("")) {
+                String s2 = babbling[i].trim();
+                if (s2.equals("")) {
                     answer++;
                 }
             }
