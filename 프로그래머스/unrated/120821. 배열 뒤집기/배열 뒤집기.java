@@ -1,14 +1,14 @@
+
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Arrays;
+
 class Solution {
-    public int[] solution(int[] num_list) {
+    public int[] solution(int[] numList) {
+        List<Integer> list = Arrays.stream(numList).boxed().collect(Collectors.toList());
 
-        int length = num_list.length;
-        int[] reversedArr = new int[length];
-
-        for (int i = 0; i < length; i++) {
-            
-            reversedArr[i] = num_list[length-1-i];
-        }
-
-        return reversedArr;
+        Collections.reverse(list);
+        return list.stream().mapToInt(Integer::intValue).toArray();
     }
 }
