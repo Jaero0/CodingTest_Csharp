@@ -1,15 +1,14 @@
-import java.util.LinkedList;
-import java.util.List;
-
 class Solution {
     public int[] solution(int n) {
-        List<Integer> list = new LinkedList<>();
+        int[] answer = new int[(n-1)/2+1];
 
-        for (int i = 1; i <= n; i+=2) {
+        int num = 1;
+        for (int i = 0; i < answer.length; i++) {
 
-            list.add(i);
+            answer[i] = num;
+            num += 2;
         }
 
-        return list.stream().mapToInt(i->i).toArray();
+        return answer;
     }
 }
