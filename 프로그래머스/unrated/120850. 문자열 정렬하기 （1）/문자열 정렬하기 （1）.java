@@ -1,21 +1,20 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Arrays;
 
 class Solution {
     public int[] solution(String my_string) {
 
-        List<Integer> answer = new LinkedList<>();
+        my_string = my_string.replaceAll("[a-z]","");
+        System.out.println(my_string);
 
-        for (char c : my_string.toCharArray()) {
+        int[] answer = new int[my_string.length()];
 
-            if ('0' <= c && '9' >= c) {
-                answer.add(c-48);
-            }
+        for(int i =0; i<my_string.length(); i++){
+            answer[i] = my_string.charAt(i) - '0';
+            System.out.println(answer[i]);
         }
 
-        Collections.sort(answer);
+        Arrays.sort(answer);
 
-        return answer.stream().mapToInt(i->i).toArray();
+        return answer;
     }
 }
