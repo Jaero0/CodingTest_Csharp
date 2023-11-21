@@ -12,10 +12,7 @@ public class Solution {
 
         for (int i = 0; i < count; i++) {
 
-            for (int j = 0; j < i+1; j++) {
-
-                sb.append("*");
-            }
+            sb.append("*".repeat(i+1));
             sb.append("\n");
         }
 
