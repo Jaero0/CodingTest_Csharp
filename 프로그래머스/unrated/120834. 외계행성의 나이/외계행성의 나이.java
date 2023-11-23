@@ -1,9 +1,10 @@
+
 class Solution {
     public String solution(int age) {
 
         StringBuilder sb = new StringBuilder();
         
-        char[] alphabet = new char[26];
+        char[] alphabet = new char[10];
 
         for (int i = 0; i < alphabet.length; i++) {
 
