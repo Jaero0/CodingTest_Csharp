@@ -1,22 +1,25 @@
+import java.util.Stack;
+
 class Solution {
     public int solution(String s) {
         int answer = 0;
 
-        int temp = 0;
-        String[] tokens = s.split(" ");
+        Stack<String> stack = new Stack<>();
 
-        for (int i = 0; i < tokens.length; i++) {
-            
-            if (tokens[i].equals("Z")) {
-                answer -= temp;
-                continue;
+        String[] tokens = s.split(" ");
+        for (String token : tokens) {
+
+            if (token.equals("Z")) {
+                stack.pop();
+            } else {
+                stack.push(token);
             }
-            int plus = Integer.parseInt(tokens[i]);
-            
-            answer += plus;
-            temp = plus;
         }
-        
+
+        while (!stack.isEmpty()) {
+            answer += Integer.parseInt(stack.pop());
+        }
+
         return answer;
     }
 }
